@@ -27,10 +27,59 @@ export default function TabLayout() {
         }),
       }}>
       <Tabs.Screen
+        name="dashboard"
+        options={{
+          title: 'Dashboard',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="gauge" color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="my-ticket"
+        options={{
+          title: 'Ticket',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="ticket" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="floor-map"
+        options={{
+          title: 'Map',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="map" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="scan-leads"
+        options={{
+          title: 'Scan',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="qrcode" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="my-leads"
+        options={{
+          title: 'Leads',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person.2" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="leaderboard"
+        options={{
+          title: 'Points',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="trophy" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="schedule"
+        options={{
+          title: 'Schedule',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
         }}
       />
       <Tabs.Screen

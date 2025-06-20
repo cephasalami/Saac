@@ -9,19 +9,14 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.cephasalami.saac",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "package": "com.cephasalami.saac"
+      "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
@@ -29,7 +24,6 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-dev-client",
       "expo-router",
       [
         "expo-splash-screen",
@@ -39,9 +33,7 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ],
-      "expo-web-browser",
-      "expo-barcode-scanner"
+      ]
     ],
     "experiments": {
       "typedRoutes": true
@@ -52,12 +44,6 @@
         "projectId": "d219ab28-41ff-4218-9b26-dddc2c3b2a6d"
       }
     },
-    "owner": "cephasalami",
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/d219ab28-41ff-4218-9b26-dddc2c3b2a6d"
-    }
+    "owner": "cephasalami"
   }
 }
