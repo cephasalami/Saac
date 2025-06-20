@@ -14,7 +14,7 @@ import { Booth, booths } from '@/data/booths';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-const floorMap: ImageSourcePropType = require('../../../assets/images/floor-map.png');
+const floorMap: ImageSourcePropType = require('../../assets/images/floor-map.png');
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export default function FloorMapScreen() {
