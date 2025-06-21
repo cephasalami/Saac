@@ -1,20 +1,20 @@
 import React, { useRef, useState } from 'react';
 import { 
-  Image, 
-  ImageSourcePropType, 
-  Modal, 
   StyleSheet, 
   View, 
   useWindowDimensions,
   ScrollView,
-  Dimensions
+  Dimensions,
+  Modal
 } from 'react-native';
+import { Image } from 'expo-image';
 import BoothOverlay from '@/components/BoothOverlay';
 import { Booth, booths } from '@/data/booths';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-const floorMap: ImageSourcePropType = require('../../assets/images/floor-map.png');
+// Use a placeholder floor map image from Pexels
+const floorMapUrl = 'https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export default function FloorMapScreen() {
@@ -22,11 +22,10 @@ export default function FloorMapScreen() {
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const [selected, setSelected] = useState<Booth | null>(null);
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
-  const imageRef = useRef<Image>(null);
 
   // Calculate image dimensions while maintaining aspect ratio
   const onImageLoad = (event: any) => {
-    const { width, height } = event.nativeEvent.source;
+    const { width, height } = event.source;
     const imageAspectRatio = width / height;
     const containerAspectRatio = containerSize.width / containerSize.height;
     
@@ -60,8 +59,7 @@ export default function FloorMapScreen() {
           }}
         >
           <Image
-            ref={imageRef}
-            source={floorMap}
+            source={{ uri: floorMapUrl }}
             style={[
               styles.mapImage,
               {
@@ -71,7 +69,7 @@ export default function FloorMapScreen() {
                   : containerSize.height,
               },
             ]}
-            resizeMode="contain"
+            contentFit="contain"
             onLoad={onImageLoad}
           />
           {imageSize.width > 0 &&
